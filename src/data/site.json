@@ -2,15 +2,40 @@
   "siteName": "RAIGA.",
   "tagline": "Gaming is part of my story.",
   "accounts": {
-    "osu": { "username": "Raiga7740", "profileUrl": "https://osu.ppy.sh/users/Raiga7740" },
-    "roblox": { "username": "Raiga7740", "profileUrl": "https://www.roblox.com/users/Raiga7740/profile" },
-    "valorant": { "riotId": "haerin#10927" }
+    "osu": {
+      "username": "Raiga7740",
+      "profileUrl": "https://osu.ppy.sh/users/Raiga7740"
+    },
+    "roblox": {
+      "username": "Raiga7740",
+      "profileUrl": "https://www.roblox.com/users/Raiga7740/profile"
+    },
+    "valorant": {
+      "riotId": "haerin#10927"
+    }
   },
   "socials": [
-    { "label": "Discord", "handle": "Raiga", "note": "Discord username is served from live presence data once Lanyard is connected — not the Riot ID.", "url": "https://discord.com/users/610382027002478612" },
-    { "label": "Steam", "handle": "Raiga", "url": "https://steamcommunity.com/id/raiga7740" },
-    { "label": "YouTube", "handle": "@raiga", "url": "https://youtube.com/@raiga" },
-    { "label": "X", "handle": "@raiga7740", "url": "https://x.com/raiga7740" }
+    {
+      "label": "Discord",
+      "handle": "raiga7740",
+      "note": "Discord username is served from live presence data once Lanyard is connected — not the Riot ID.",
+      "url": "https://discord.com/users/610382027002478612"
+    },
+    {
+      "label": "Steam",
+      "handle": "Raiga",
+      "url": "https://steamcommunity.com/profiles/76561198983428903/"
+    },
+    {
+      "label": "YouTube",
+      "handle": "@raiga_v",
+      "url": "https://youtube.com/@raiga_v"
+    },
+    {
+      "label": "X",
+      "handle": "@raigafp0u",
+      "url": "https://x.com/@raigafp0u"
+    }
   ],
   "about": [
     "I'm Raiga — a player who treats games as more than a pastime. From climbing the osu! leaderboards to clutching rounds in VALORANT, every session adds a page to the story.",
