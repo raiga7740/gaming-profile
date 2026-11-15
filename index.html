@@ -13,6 +13,14 @@
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/src/css/main.css" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 
 <body>
@@ -242,21 +250,15 @@
 
             <div class="game-card__stats-grid">
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="osu-rank">#12,487</span>
-                </div>
+                <span class="game-stat__value" data-slot="osu-rank">#74,751</span>
                 <span class="game-stat__label">Global Rank</span>
               </div>
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="osu-pp">4,892 pp</span>
-                </div>
+                <span class="game-stat__value" data-slot="osu-pp">5,782.64 pp</span>
                 <span class="game-stat__label">Performance</span>
               </div>
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="osu-acc">98.57%</span>
-                </div>
+                <span class="game-stat__value" data-slot="osu-acc">96.08%</span>
                 <span class="game-stat__label">Accuracy</span>
               </div>
             </div>
@@ -274,7 +276,7 @@
             <div class="game-card__banner" style="background-image: url('/assets/images/roblox-banner.jpg');">
               <div class="game-card__banner-overlay"></div>
               <div class="game-card__header-content">
-                <img src="/assets/icons/roblox_logo.jpg" alt="Roblox"
+                <img src="assets/icons/roblox_logo.jpg" alt="Roblox"
                   class="game-card__logo game-card__logo--squircle" />
                 <div class="game-card__title-wrap">
                   <h3 class="game-card__title">Roblox</h3>
@@ -285,21 +287,15 @@
 
             <div class="game-card__stats-grid">
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="roblox-friends">142</span>
-                </div>
+                <span class="game-stat__value" data-slot="roblox-friends">230</span>
                 <span class="game-stat__label">Friends</span>
               </div>
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="roblox-playtime">732h+</span>
-                </div>
+                <span class="game-stat__value" data-slot="roblox-playtime">732h+</span>
                 <span class="game-stat__label">Playtime</span>
               </div>
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="roblox-favorites">215</span>
-                </div>
+                <span class="game-stat__value" data-slot="roblox-favorites">215</span>
                 <span class="game-stat__label">Favorites</span>
               </div>
             </div>
@@ -328,21 +324,15 @@
 
             <div class="game-card__stats-grid">
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="val-rank">Ascendant 1</span>
-                </div>
+                <span class="game-stat__value" data-slot="val-rank">Diamond 3</span>
                 <span class="game-stat__label">Peak Rank</span>
               </div>
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="val-kd">1.12</span>
-                </div>
+                <span class="game-stat__value" data-slot="val-kd">1.07</span>
                 <span class="game-stat__label">K/D Ratio</span>
               </div>
               <div class="game-stat">
-                <div class="game-stat__value-row">
-                  <span class="game-stat__value" data-slot="val-wr">51.3%</span>
-                </div>
+                <span class="game-stat__value" data-slot="val-wr">40%</span>
                 <span class="game-stat__label">Win Rate</span>
               </div>
             </div>

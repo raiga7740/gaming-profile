@@ -15,8 +15,15 @@
   --surface: #13141a;
   --card: #16171e;
   --card-hover: #1a1b24;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --card-shadow-hover: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 106, 0, 0.12);
   --border: rgba(255, 255, 255, 0.07);
   --border-focus: rgba(255, 106, 0, 0.4);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --nav-bg: rgba(12, 13, 18, 0.75);
+  --nav-bg-scrolled: rgba(12, 13, 18, 0.92);
+  --pill-bg: rgba(255, 255, 255, 0.03);
+  --pill-bg-hover: rgba(255, 255, 255, 0.08);
   --accent: #ff6a00;
   --accent-rgb: 255, 106, 0;
   --accent-light: #ff8533;
@@ -24,6 +31,10 @@
   --text: #ffffff;
   --text-muted: #9ca3af;
   --text-subtle: #656b78;
+  --avatar-border: #0d0e12;
+  --footer-bg: #090a0e;
+  --banner-overlay-start: rgba(22, 23, 30, 0.15);
+  --banner-overlay-mid: rgba(22, 23, 30, 0.8);
   --online: #22c55e;
   --discord: #5865f2;
   --trophy: #eab308;
@@ -36,16 +47,27 @@
 }
 
 [data-theme="light"] {
-  --bg: #f4f5f8;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #ffffff 0%, #f0f1f6 70%);
+  --bg: #f4f6fa;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #ffffff 0%, #edf0f7 70%);
   --surface: #ffffff;
   --card: #ffffff;
-  --card-hover: #fcfcfd;
-  --border: rgba(0, 0, 0, 0.08);
+  --card-hover: #fcfdfe;
+  --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.09), 0 0 18px rgba(255, 106, 0, 0.12);
+  --border: rgba(0, 0, 0, 0.09);
   --border-focus: rgba(255, 106, 0, 0.6);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --nav-bg: rgba(244, 246, 250, 0.85);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
+  --pill-bg: rgba(0, 0, 0, 0.04);
+  --pill-bg-hover: rgba(0, 0, 0, 0.07);
   --text: #0f1117;
-  --text-muted: #4b5563;
-  --text-subtle: #8a92a1;
+  --text-muted: #535a6d;
+  --text-subtle: #828a9b;
+  --avatar-border: #e2e5ec;
+  --footer-bg: #eceff5;
+  --banner-overlay-start: rgba(255, 255, 255, 0.25);
+  --banner-overlay-mid: rgba(255, 255, 255, 0.88);
 }
 
 * {
@@ -164,16 +186,17 @@ button {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(12, 13, 18, 0.75);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-subtle);
   transition: all var(--transition);
 }
 
 .nav.is-scrolled {
   border-bottom-color: var(--border);
-  background: rgba(12, 13, 18, 0.92);
+  background: var(--nav-bg-scrolled);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .nav__inner {
@@ -266,21 +289,24 @@ button {
   gap: 8px;
   padding: 6px 10px;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--pill-bg);
   border: 1px solid var(--border);
   color: var(--text-muted);
   transition: all var(--transition);
 }
 
 .theme-toggle:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent);
   color: var(--text);
+  background: var(--pill-bg-hover);
 }
 
 .theme-toggle__icon {
   width: 16px;
   height: 16px;
-  opacity: 0.55;
+  opacity: 0.45;
+  transition: all var(--transition);
+}
   transition: all var(--transition);
 }
 
@@ -363,8 +389,8 @@ button {
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
-  background: #111;
-  border: 3px solid #0d0e12;
+  background: var(--surface);
+  border: 3px solid var(--avatar-border);
 }
 
 .hero__avatar-inner img {
@@ -381,7 +407,7 @@ button {
   height: 18px;
   background: var(--online);
   border-radius: 50%;
-  border: 3px solid #0d0e12;
+  border: 3px solid var(--avatar-border);
   box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
 }
 
@@ -432,7 +458,7 @@ button {
 .hero__subtitle {
   font-size: 1.22rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text);
   margin-bottom: 4px;
 }
 
@@ -453,12 +479,13 @@ button {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #181920;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--card);
+  border: 1px solid var(--border);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text);
+  box-shadow: var(--card-shadow);
   transition: all var(--transition);
 }
 
@@ -471,8 +498,9 @@ button {
 }
 
 .social-btn:hover {
-  background: #20222c;
+  background: var(--card-hover);
   border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(255, 106, 0, 0.2);
 }
@@ -549,11 +577,11 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  background: #14151c;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
   padding: 16px 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--card-shadow);
   position: relative;
 }
 
@@ -565,7 +593,7 @@ button {
 }
 
 .overview-item + .overview-item {
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 1px solid var(--border);
 }
 
 .overview-icon {
@@ -672,6 +700,7 @@ button {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--card-shadow);
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
   position: relative;
 }
@@ -679,7 +708,7 @@ button {
 .game-card:hover {
   border-color: rgba(255, 106, 0, 0.45);
   transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 106, 0, 0.12);
+  box-shadow: var(--card-shadow-hover);
 }
 
 /* Card Banner */
@@ -698,8 +727,8 @@ button {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(22, 23, 30, 0.15) 0%,
-    rgba(22, 23, 30, 0.8) 65%,
+    var(--banner-overlay-start) 0%,
+    var(--banner-overlay-mid) 65%,
     var(--card) 100%
   );
   pointer-events: none;
@@ -723,6 +752,7 @@ button {
 
 .game-card__logo--round {
   border-radius: 50%;
+  box-shadow: 0 0 16px rgba(255, 102, 170, 0.45);
 }
 
 .game-card__logo--squircle {
@@ -811,15 +841,15 @@ button {
   color: var(--text-muted);
   padding: 7px 18px;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
   transition: all var(--transition);
 }
 
 .game-card__btn:hover {
-  color: #fff;
+  color: var(--accent);
   border-color: var(--accent);
-  background: rgba(255, 106, 0, 0.12);
+  background: rgba(255, 106, 0, 0.1);
 }
 
 .game-card__btn .arrow {
@@ -853,6 +883,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  box-shadow: var(--card-shadow);
   position: relative;
   height: 100%;
 }
@@ -973,7 +1004,7 @@ button {
   content: '';
   flex: 1;
   height: 1px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--border);
 }
 
 .discord-card__divider::before {
@@ -985,8 +1016,8 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 10px 14px;
 }
@@ -997,7 +1028,8 @@ button {
   border-radius: 8px;
   overflow: hidden;
   flex-shrink: 0;
-  background: #20222b;
+  background: var(--card-hover);
+  border: 1px solid var(--border);
 }
 
 .discord-activity__icon-wrap img {
@@ -1031,6 +1063,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: var(--card-shadow);
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -1048,7 +1081,7 @@ button {
 .about-card__text {
   font-size: 0.98rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
 }
 
 .highlight-underline {
@@ -1056,7 +1089,7 @@ button {
   text-decoration-color: var(--accent);
   text-underline-offset: 3px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text);
 }
 
 .about-card__tags {
@@ -1070,8 +1103,8 @@ button {
   display: inline-block;
   padding: 6px 16px;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
   font-size: 0.84rem;
   font-weight: 500;
   color: var(--text-muted);
@@ -1080,8 +1113,8 @@ button {
 
 .about-tag:hover {
   border-color: rgba(255, 106, 0, 0.5);
-  color: #fff;
-  background: rgba(255, 106, 0, 0.08);
+  color: var(--accent);
+  background: rgba(255, 106, 0, 0.1);
 }
 
 /* Calligraphic "Game On!" */
@@ -1110,8 +1143,8 @@ button {
 .footer {
   margin-top: 40px;
   padding: 32px 0 36px;
-  background: #090a0e;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border);
   position: relative;
   overflow: hidden;
 }
@@ -1151,7 +1184,8 @@ button {
 }
 
 .footer__pipe {
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--text-subtle);
+  opacity: 0.35;
   font-size: 1.2rem;
   font-weight: 300;
 }
@@ -1244,10 +1278,11 @@ button {
     top: 68px;
     left: 0;
     right: 0;
-    background: #0f1016;
+    background: var(--surface);
     flex-direction: column;
     padding: 18px 24px;
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     gap: 12px;
   }
 
@@ -1292,4 +1327,40 @@ button {
   .footer__center .footer__pipe {
     display: none;
   }
+}
+
+/* ============================================================
+   LIGHT MODE ICON ADAPTATIONS & THEME TRANSITIONS
+   ============================================================ */
+[data-theme="light"] .social-btn img[src*="steam"],
+[data-theme="light"] .social-btn img[src*="x"],
+[data-theme="light"] .footer__social img[src*="steam"],
+[data-theme="light"] .footer__social img[src*="x"] {
+  filter: invert(1) brightness(0.18);
+}
+
+[data-theme="light"] .social-btn:hover img[src*="steam"],
+[data-theme="light"] .social-btn:hover img[src*="x"],
+[data-theme="light"] .footer__social:hover img[src*="steam"],
+[data-theme="light"] .footer__social:hover img[src*="x"] {
+  filter: invert(48%) sepia(89%) saturate(2476%) hue-rotate(360deg) brightness(101%) contrast(106%);
+}
+
+[data-theme="light"] .game-on-text {
+  text-shadow: 0 0 12px rgba(255, 106, 0, 0.3);
+}
+
+body,
+.nav,
+.nav__links,
+.overview-bar,
+.game-card,
+.discord-card,
+.about-card,
+.footer,
+.social-btn,
+.theme-toggle,
+.about-tag,
+.game-card__btn {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }

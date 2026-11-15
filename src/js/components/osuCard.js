@@ -14,7 +14,10 @@ export async function renderOsu(cardEl) {
     rankSlot.textContent = `#${fmt.num(d.globalRank)}`;
   }
   if (d.pp && ppSlot) {
-    ppSlot.textContent = `${fmt.num(d.pp)} pp`;
+    const formattedPp = typeof d.pp === 'number'
+      ? d.pp.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+      : d.pp;
+    ppSlot.textContent = `${formattedPp} pp`;
   }
   if (d.accuracy && accSlot) {
     accSlot.textContent = fmt.pct(d.accuracy);

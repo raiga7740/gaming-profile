@@ -4,8 +4,8 @@
   "peakRank": "Diamond 3",
   "currentRank": "Diamond 3",
   "mainAgent": "Jett",
-  "kdRatio": 1.24,
-  "winRate": 56,
+  "kdRatio": 1.07,
+  "winRate": 40,
   "lastVerified": "2026-11-01",
   "note": "Manually maintained values. Riot does not provide personal stats via the standard developer API; this card will switch to live API data only after an authorized integration is available."
 }
