@@ -4,6 +4,7 @@
  */
 import http from 'node:http';
 import { fetchJson, guard, fail } from '../api/_lib/http.js';
+import valorantHandler from '../api/valorant/profile.js';
 
 process.env.NODE_ENV = 'test';
 
@@ -19,7 +20,7 @@ try {
 }
 check('request rejects instead of hanging', rejected !== null);
 check('error message contains no secrets or URL internals',
-  rejected instanceof Error && !/secret|token|password/i.test(rejected.message));
+  rejected instanceof Error && !/secret|token|password|api[-_]?key/i.test(rejected.message));
 
 console.log('[2] Deterministic timeout enforcement (AbortController cancellation):');
 let requestReceived = false;
@@ -83,6 +84,23 @@ const p2 = JSON.parse(res2.body);
 check('ok:false + code + message shape', p2.ok === false && p2.error.code === 'not_found');
 check('error response sets no-store Cache-Control header',
   res2.headers['Cache-Control'] === 'no-store, no-cache, must-revalidate');
+
+console.log('[5] VALORANT route failure modes & input validation:');
+const resValInvalid = mockRes();
+await valorantHandler({ query: { riotId: 'invalid#12345678' } }, resValInvalid);
+const pValInvalid = JSON.parse(resValInvalid.body);
+check('invalid riotId returns 400 invalid_riot_id', resValInvalid.statusCode === 400 && pValInvalid.error?.code === 'invalid_riot_id');
+
+const resValStrict = mockRes();
+await valorantHandler({ query: { strict: 'true' } }, resValStrict);
+const pValStrict = JSON.parse(resValStrict.body);
+check('missing config in strict mode returns 503 not_configured', resValStrict.statusCode === 503 && pValStrict.error?.code === 'not_configured');
+
+const resValFallback = mockRes();
+await valorantHandler({ query: {} }, resValFallback);
+const pValFallback = JSON.parse(resValFallback.body);
+check('unconfigured profile safely falls back to 200 with source: manual', resValFallback.statusCode === 200 && pValFallback.source === 'manual');
+check('fallback response exposes no secrets', !/RGAPI|HDEV|secret|token/i.test(resValFallback.body));
 
 console.log(failures === 0 ? '\nFailure-mode tests: ALL PASSED' : `\nFailure-mode tests: ${failures} FAILURE(S)`);
 process.exit(failures ? 1 : 0);

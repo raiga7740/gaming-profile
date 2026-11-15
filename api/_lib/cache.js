@@ -41,4 +41,5 @@ export const TTL = {
   OSU_TOKEN: 55 * 60 * 1000, // just under osu!'s 1 hour token lifetime
   ROBLOX_PROFILE: 10 * 60 * 1000,
   DISCORD_PRESENCE: 45 * 1000, // 45 seconds — presence is live data
+  VALORANT_PROFILE: 10 * 60 * 1000, // 10 minutes
 };

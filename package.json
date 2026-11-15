@@ -11,6 +11,7 @@
     "dev": "npx --yes vercel dev",
     "start": "npx --yes vercel dev",
     "deploy": "npx --yes vercel --prod",
+    "test": "node scripts/xss-check.mjs && node scripts/failure-test.mjs && node scripts/smoke-test.mjs && node scripts/valorant-api-test.mjs",
     "package": "node scripts/package-zip.mjs"
   }
 }

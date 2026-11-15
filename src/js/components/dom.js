@@ -40,6 +40,9 @@ const ALLOWED_IMG_PREFIXES = [
   'https://images.rbxcdn.com/',
   'https://a.ppy.sh/',
   'https://assets.ppy.sh/',
+  'https://media.valorant-api.com/',
+  'https://images.contentstack.io/',
+  'https://cdn.henrikdev.xyz/',
 ];
 
 export function safeImageUrl(url) {
