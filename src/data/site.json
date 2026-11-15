@@ -42,7 +42,7 @@
     "This page is a living snapshot of that story: real stats pulled from official APIs where possible, honest manual entries where it isn't, and nothing invented in between."
   ],
   "overview": {
-    "note": "Playtime data is not reliably available, so it is shown as unavailable rather than estimated.",
+    "note": "Cross-game total playtime is unavailable — only osu! provides official lifetime playtime; VALORANT and Roblox do not.",
     "favoriteGame": "VALORANT",
     "highlight": "Peak Immortal 1 in VALORANT — the grind continues."
   }

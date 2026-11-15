@@ -30,6 +30,8 @@ export function loadManualProfile() {
       kdRatio: profile.kdRatio ?? null,
       winRate: profile.winRate ?? null,
       recentMatches: profile.recentMatches ?? [],
+      // ponytail: lifetime playtime unavailable via HenrikDev/Riot; tracked match seconds only
+      trackedMatchSeconds: null,
       lastVerified: profile.lastVerified ?? null,
       note: profile.note ?? null,
       source: 'manual',
@@ -61,17 +63,25 @@ function parseRiotId(req) {
 
 function aggregateMatchStats(matches, puuid, name, tag) {
   if (!Array.isArray(matches) || matches.length === 0) {
-    return { kdRatio: null, winRate: null, mainAgent: null, recentMatches: [] };
+    return { kdRatio: null, winRate: null, mainAgent: null, recentMatches: [], trackedMatchSeconds: null };
   }
 
   let totalKills = 0;
   let totalDeaths = 0;
   let wins = 0;
   let countedMatches = 0;
+  let trackedMatchSeconds = 0;
   const agentCounts = {};
   const recentMatches = [];
 
   for (const match of matches) {
+    // ponytail: game_length in HenrikDev matches is in seconds (or ms if >50000); sum tracked duration only
+    if (typeof match.metadata?.game_length === 'number') {
+      const secs = match.metadata.game_length > 50000
+        ? Math.round(match.metadata.game_length / 1000)
+        : match.metadata.game_length;
+      trackedMatchSeconds += secs;
+    }
     const players = match?.players?.all_players;
     if (!Array.isArray(players)) continue;
 
@@ -129,7 +139,13 @@ function aggregateMatchStats(matches, puuid, name, tag) {
       : null;
   const winRate = countedMatches > 0 ? Math.round((wins / countedMatches) * 100) : null;
 
-  return { kdRatio, winRate, mainAgent, recentMatches: recentMatches.slice(0, 5) };
+  return {
+    kdRatio,
+    winRate,
+    mainAgent,
+    recentMatches: recentMatches.slice(0, 5),
+    trackedMatchSeconds: trackedMatchSeconds > 0 ? trackedMatchSeconds : null,
+  };
 }
 
 async function fetchHenrikData(name, tag, apiKey) {
@@ -219,6 +235,7 @@ async function fetchHenrikData(name, tag, apiKey) {
     kdRatio: matchStats.kdRatio,
     winRate: matchStats.winRate,
     recentMatches: matchStats.recentMatches,
+    trackedMatchSeconds: matchStats.trackedMatchSeconds ?? null,
   };
 }
 

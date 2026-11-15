@@ -47,6 +47,8 @@ export async function renderRoblox(cardEl) {
   rows.style.marginTop = '14px';
   if (fmt.num(d.friendsCount)) statRow(rows, 'Friends', fmt.num(d.friendsCount));
   statRow(rows, 'Status', d.isBanned ? 'Banned' : 'Active', d.isBanned ? 'stat-row__val--unavailable' : '');
+  // ponytail: Roblox API does not track account-wide playtime; display 'Not available' per requirement
+  statRow(rows, 'Playtime', 'Not available', 'stat-row__val--unavailable');
 
   const descText = typeof d.description === 'string' && d.description.trim()
     ? d.description

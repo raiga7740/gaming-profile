@@ -97,6 +97,8 @@ async function handler(req, res) {
         pp: value.statistics?.pp ?? null,
         accuracy: value.statistics?.hit_accuracy ?? null,
         playCount: value.statistics?.play_count ?? null,
+        // ponytail: raw seconds from official osu! API; frontend formats to hours
+        playTimeSeconds: typeof value.statistics?.play_time === 'number' ? value.statistics.play_time : null,
         level: value.statistics?.level?.current ?? null,
         rankedScore: value.statistics?.ranked_score ?? null,
         maxCombo: value.statistics?.maximum_combo ?? null,

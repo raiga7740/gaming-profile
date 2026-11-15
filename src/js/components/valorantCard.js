@@ -75,6 +75,13 @@ export async function renderValorant(cardEl) {
   statRow(rows, 'Main agent', d.mainAgent);
   statRow(rows, 'K/D ratio', kd);
   statRow(rows, 'Win rate', wr);
+  // ponytail: format tracked match duration; lifetime account playtime is unavailable from HenrikDev/Riot
+  const trackedTime = typeof d.trackedMatchSeconds === 'number' && d.trackedMatchSeconds > 0
+    ? (d.trackedMatchSeconds >= 3600
+      ? `${(d.trackedMatchSeconds / 3600).toFixed(1)} hrs`
+      : `${Math.round(d.trackedMatchSeconds / 60)} mins`)
+    : null;
+  statRow(rows, 'Tracked Match Time', trackedTime);
 
   const parts = [rows];
 

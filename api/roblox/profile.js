@@ -74,6 +74,8 @@ async function getUserDetails(id) {
     isBanned: typeof details.isBanned === 'boolean' ? details.isBanned : false,
     friendsCount,
     avatarUrl,
+    // ponytail: Roblox Web API has no account-wide playtime; upgrade if official API adds telemetry endpoint
+    playTime: null,
     profileUrl: `https://www.roblox.com/users/${id}/profile`,
   };
 }
