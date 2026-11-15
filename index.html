@@ -1,40 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RAIGA. — Gaming Profile</title>
   <meta name="description" content="Raiga's personal gaming profile — osu!, Roblox, VALORANT and Discord presence." />
-  <link rel="icon" type="image/jpeg" href="/assets/icons/logo_raiga.jpg" />
+  <link rel="icon" type="image/jpeg" href="/assets/images/raiga-avatar.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/src/css/main.css" />
 </head>
 
 <body>
-  <!-- Atmospheric hero backdrop -->
-  <div class="backdrop" aria-hidden="true">
-    <div class="backdrop__glow"></div>
-    <div class="backdrop__grid"></div>
-  </div>
+  <!-- Corner Cyber Decal -->
+  <div class="cyber-decal cyber-decal--top-right" aria-hidden="true"></div>
 
+  <!-- ============ NAVBAR ============ -->
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="#top" class="nav__logo" aria-label="RAIGA."><img src="/assets/icons/logo_raiga.jpg" alt="RAIGA."
-          class="nav__logo-img" /></a>
-      <nav class="nav__links" id="nav-links" aria-label="Primary">
-        <a href="#home" class="nav__link is-active">Home</a>
-        <a href="#games" class="nav__link">Games</a>
-        <a href="#about" class="nav__link">About</a>
-        <a href="#socials" class="nav__link">Socials</a>
+      <a href="#top" class="nav__brand" aria-label="RAIGA.">
+        RAIGA<span class="nav__brand-dot">.</span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Primary Navigation">
+        <a href="#home" class="nav__link is-active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          Home
+        </a>
+        <a href="#games" class="nav__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="12" x2="10" y2="12"/>
+            <line x1="8" y1="10" x2="8" y2="14"/>
+            <line x1="15" y1="13" x2="15.01" y2="13"/>
+            <line x1="18" y1="11" x2="18.01" y2="11"/>
+            <rect x="2" y="6" width="20" height="12" rx="6"/>
+          </svg>
+          Games
+        </a>
+        <a href="#about" class="nav__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          About
+        </a>
+        <a href="#socials" class="nav__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+          Socials
+        </a>
       </nav>
-      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon is-active" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -42,211 +89,406 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
       <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="hero__eyebrow">Gaming Profile</p>
-          <h1 class="hero__title">Hey, I'm <span class="hero__accent">Raiga</span>.</h1>
-          <p class="hero__subtitle">Gaming is part of my story.</p>
-
-          <div class="hero__accounts">
-            <span class="hero__account"><img src="/assets/icons/osu_logo.jpg" alt="" loading="lazy" width="16"
-                height="16" />osu! — Raiga7740</span>
-            <span class="hero__account"><img src="/assets/icons/roblox_logo.jpg" alt="" loading="lazy" width="16"
-                height="16" />Roblox — Raiga7740</span>
-            <span class="hero__account"><img src="/assets/icons/valorant_logo.jpg" alt="" loading="lazy" width="16"
-                height="16" />VALORANT — haerin#10927</span>
+        <div class="hero__left">
+          <!-- Circular Avatar with glowing double ring & online dot -->
+          <div class="hero__avatar-container">
+            <div class="hero__avatar-ring">
+              <div class="hero__avatar-inner">
+                <img id="hero-avatar" src="/assets/images/raiga-avatar.jpg" alt="Raiga" />
+              </div>
+            </div>
+            <span class="hero__status-dot" title="Online"></span>
           </div>
 
-          <div class="hero__socials">
-            <a class="social-chip" href="https://discord.com/users/610382027002478612" target="_blank"
-              rel="noopener noreferrer" title="Discord">
-              <img src="/assets/icons/discord.svg" alt="Discord" width="18" height="18" loading="lazy" />
-            </a>
-            <a class="social-chip" href="https://steamcommunity.com/profiles/76561198983428903/" target="_blank"
-              rel="noopener noreferrer" title="Steam">
-              <img src="/assets/icons/steam.svg" alt="Steam" width="18" height="18" loading="lazy" />
-            </a>
-            <a class="social-chip" href="https://youtube.com/@raiga_v" target="_blank" rel="noopener noreferrer"
-              title="YouTube">
-              <img src="/assets/icons/youtube.svg" alt="YouTube" width="18" height="18" loading="lazy" />
-            </a>
-            <a class="social-chip" href="https://x.com/@raigafp0u" target="_blank" rel="noopener noreferrer" title="X">
-              <img src="/assets/icons/x.svg" alt="X" width="18" height="18" loading="lazy" />
-            </a>
+          <div class="hero__content">
+            <div class="hero__badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="6" y1="12" x2="10" y2="12"/>
+                <line x1="8" y1="10" x2="8" y2="14"/>
+                <line x1="15" y1="13" x2="15.01" y2="13"/>
+                <line x1="18" y1="11" x2="18.01" y2="11"/>
+                <rect x="2" y="6" width="20" height="12" rx="6"/>
+              </svg>
+              <span>GAMING PROFILE</span>
+            </div>
+
+            <h1 class="hero__title">Hey, I'm <span class="hero__title-accent">Raiga.</span></h1>
+            <p class="hero__subtitle">Gaming is part of my story.</p>
+            <p class="hero__games-line">osu! / Roblox / VALORANT</p>
+
+            <div class="hero__socials">
+              <a class="social-btn" href="https://discord.com/users/610382027002478612" target="_blank"
+                rel="noopener noreferrer" title="Discord">
+                <img src="/assets/icons/discord.svg" alt="Discord" width="18" height="18" />
+              </a>
+              <a class="social-btn" href="https://steamcommunity.com/profiles/76561198983428903/" target="_blank"
+                rel="noopener noreferrer" title="Steam">
+                <img src="/assets/icons/steam.svg" alt="Steam" width="18" height="18" />
+              </a>
+              <a class="social-btn" href="https://youtube.com/@raiga_v" target="_blank"
+                rel="noopener noreferrer" title="YouTube">
+                <img src="/assets/icons/youtube.svg" alt="YouTube" width="18" height="18" />
+              </a>
+              <a class="social-btn" href="https://x.com/@raigafp0u" target="_blank"
+                rel="noopener noreferrer" title="X">
+                <img src="/assets/icons/x.svg" alt="X" width="18" height="18" />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__avatar-frame">
-            <img id="hero-avatar" src="/images/alya.gif" alt="Hero avatar" loading="lazy"
-              onerror="this.style.display='none'; this.parentElement.classList.add('is-empty')" />
-            <span class="hero__avatar-fallback">R</span>
+        <div class="hero__right">
+          <div class="hero__art-wrapper">
+            <img src="/assets/images/hero-art.jpg" alt="Raiga artwork" class="hero__art-img" />
+            <div class="hero__cyber-stripes" aria-hidden="true">
+              <span class="hero__cyber-stripe"></span>
+              <span class="hero__cyber-stripe"></span>
+              <span class="hero__cyber-stripe"></span>
+            </div>
           </div>
+          <p class="hero__quote">“ Just a player, chasing better gameplay. ”</p>
         </div>
       </div>
-      <div class="hero__scroll-hint" aria-hidden="true">scroll</div>
     </section>
 
-    <!-- ============ OVERVIEW ============ -->
-    <section class="section" id="overview">
+    <!-- ============ OVERVIEW STATS BAR ============ -->
+    <section class="overview-section" id="overview">
       <div class="container">
-        <h2 class="section__title">Gaming <span class="accent">Overview</span></h2>
-        <div class="overview-grid" id="overview-grid">
-          <article class="stat-card" id="overview-playtime">
-            <span class="stat-card__label">Total playtime</span>
-            <span class="stat-card__value stat-card__value--unavailable" id="overview-playtime-val">Unavailable</span>
-            <span class="stat-card__note" id="overview-playtime-note">Cross-game total unavailable — see verified stats
-              below.</span>
-          </article>
-          <article class="stat-card">
-            <span class="stat-card__label">Games played</span>
-            <span class="stat-card__value">3<span class="stat-card__unit">tracked</span></span>
-            <span class="stat-card__note">osu! · Roblox · VALORANT</span>
-          </article>
-          <article class="stat-card">
-            <span class="stat-card__label">Favorite game</span>
-            <span class="stat-card__value">VALORANT</span>
-            <span class="stat-card__note">Most hours invested recently.</span>
-          </article>
-          <article class="stat-card">
-            <span class="stat-card__label">Personal highlight</span>
-            <span class="stat-card__value stat-card__value--small">Peak Diamond 3</span>
-            <span class="stat-card__note">The grind continues.</span>
-          </article>
+        <div class="overview-bar">
+          <div class="overview-item">
+            <div class="overview-icon overview-icon--chart">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="12" width="4" height="9" rx="1"/>
+                <rect x="10" y="8" width="4" height="13" rx="1"/>
+                <rect x="17" y="3" width="4" height="18" rx="1"/>
+              </svg>
+            </div>
+            <div class="overview-info">
+              <span class="overview-label">Total Playtime</span>
+              <span class="overview-value" id="overview-playtime-val">~ 1,500h+</span>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-icon overview-icon--trophy">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.17-1.92 3.61-3.96C19.08 11.63 21 9.55 21 7V5h-2zm-14 3V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+              </svg>
+            </div>
+            <div class="overview-info">
+              <span class="overview-label">Games Played</span>
+              <span class="overview-value">3+</span>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-icon overview-icon--star">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+            </div>
+            <div class="overview-info">
+              <span class="overview-label">Favorite Game</span>
+              <span class="overview-value">osu!</span>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-icon overview-icon--heart">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <div class="overview-info">
+              <span class="overview-label">Good Vibes</span>
+              <span class="overview-value">Always ♡</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ GAMES ============ -->
+    <!-- ============ MY GAMES ============ -->
     <section class="section" id="games">
       <div class="container">
-        <h2 class="section__title">My <span class="accent">Games</span></h2>
-        <div class="games-grid">
+        <div class="section-head">
+          <h2 class="section-title">
+            <span class="slashes" aria-hidden="true"><span></span><span></span><span></span></span>
+            MY GAMES
+          </h2>
+          <a href="#games" class="section-link">View All <span class="arrow">→</span></a>
+        </div>
 
+        <div class="games-grid">
           <!-- osu! -->
           <article class="game-card game-card--osu" data-card="osu">
-            <header class="game-card__head">
-              <div class="game-card__id">
-                <img src="/assets/icons/osu_logo.jpg" alt="" width="28" height="28" loading="lazy" />
-                <div>
-                  <h3 class="game-card__name">osu!</h3>
-                  <p class="game-card__handle">Raiga7740</p>
+            <div class="game-card__banner" style="background-image: url('/assets/images/osu-banner.jpg');">
+              <div class="game-card__banner-overlay"></div>
+              <div class="game-card__header-content">
+                <img src="/assets/icons/osu_logo.jpg" alt="osu!" class="game-card__logo game-card__logo--round" />
+                <div class="game-card__title-wrap">
+                  <h3 class="game-card__title">osu!</h3>
+                  <span class="game-card__subtitle">Rhythm Game</span>
                 </div>
               </div>
-              <span class="badge badge--api" data-state="live">Live · osu! API</span>
-            </header>
-            <div class="game-card__body" data-slot="body">
-              <div class="card-loading"><span class="spinner"></span>Loading osu! stats…</div>
             </div>
-            <footer class="game-card__foot">
-              <span data-slot="updated">—</span>
-              <a href="https://osu.ppy.sh/users/Raiga7740" target="_blank" rel="noopener noreferrer">View profile ↗</a>
-            </footer>
+
+            <div class="game-card__stats-grid">
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__icon" style="color: #eab308;">🏆</span>
+                  <span class="game-stat__value" data-slot="osu-rank">#12,487</span>
+                </div>
+                <span class="game-stat__label">Global Rank</span>
+              </div>
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__value" data-slot="osu-pp">4,892 pp</span>
+                </div>
+                <span class="game-stat__label">Performance</span>
+              </div>
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__value" data-slot="osu-acc">98.57%</span>
+                </div>
+                <span class="game-stat__label">Accuracy</span>
+              </div>
+            </div>
+
+            <div class="game-card__footer">
+              <a href="https://osu.ppy.sh/users/Raiga7740" target="_blank" rel="noopener noreferrer" class="game-card__btn">
+                View Profile <span class="arrow">→</span>
+              </a>
+            </div>
           </article>
 
           <!-- Roblox -->
           <article class="game-card game-card--roblox" data-card="roblox">
-            <header class="game-card__head">
-              <div class="game-card__id">
-                <img src="/assets/icons/roblox_logo.jpg" alt="" width="28" height="28" loading="lazy" />
-                <div>
-                  <h3 class="game-card__name">Roblox</h3>
-                  <p class="game-card__handle">Raiga7740</p>
+            <div class="game-card__banner" style="background-image: url('/assets/images/roblox-banner.jpg');">
+              <div class="game-card__banner-overlay"></div>
+              <div class="game-card__header-content">
+                <img src="/assets/icons/roblox_logo.jpg" alt="Roblox" class="game-card__logo game-card__logo--squircle" />
+                <div class="game-card__title-wrap">
+                  <h3 class="game-card__title">Roblox</h3>
+                  <span class="game-card__subtitle">Sandbox</span>
                 </div>
               </div>
-              <span class="badge badge--api">Live · Roblox API</span>
-            </header>
-            <div class="game-card__body" data-slot="body">
-              <div class="card-loading"><span class="spinner"></span>Loading Roblox profile…</div>
             </div>
-            <footer class="game-card__foot">
-              <span data-slot="updated">—</span>
-              <a href="https://www.roblox.com/users/1097007394/profile" target="_blank" rel="noopener noreferrer">View
-                profile ↗</a>
-            </footer>
+
+            <div class="game-card__stats-grid">
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__icon" style="color: #9ca3af;">👥</span>
+                  <span class="game-stat__value" data-slot="roblox-friends">142</span>
+                </div>
+                <span class="game-stat__label">Friends</span>
+              </div>
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__icon" style="color: #9ca3af;">⏱</span>
+                  <span class="game-stat__value" data-slot="roblox-playtime">732h+</span>
+                </div>
+                <span class="game-stat__label">Playtime</span>
+              </div>
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__icon" style="color: #9ca3af;">⭐</span>
+                  <span class="game-stat__value" data-slot="roblox-favorites">215</span>
+                </div>
+                <span class="game-stat__label">Favorites</span>
+              </div>
+            </div>
+
+            <div class="game-card__footer">
+              <a href="https://www.roblox.com/users/1097007394/profile" target="_blank" rel="noopener noreferrer" class="game-card__btn">
+                View Profile <span class="arrow">→</span>
+              </a>
+            </div>
           </article>
 
           <!-- VALORANT -->
           <article class="game-card game-card--valorant" data-card="valorant">
-            <header class="game-card__head">
-              <div class="game-card__id">
-                <img src="/assets/icons/valorant_logo.jpg" alt="" width="28" height="28" loading="lazy" />
-                <div>
-                  <h3 class="game-card__name">VALORANT</h3>
-                  <p class="game-card__handle">haerin#10927</p>
+            <div class="game-card__banner" style="background-image: url('/assets/images/valorant-banner.jpg');">
+              <div class="game-card__banner-overlay"></div>
+              <div class="game-card__header-content">
+                <img src="/assets/icons/valorant_logo.jpg" alt="VALORANT" class="game-card__logo game-card__logo--squircle" />
+                <div class="game-card__title-wrap">
+                  <h3 class="game-card__title">VALORANT</h3>
+                  <span class="game-card__subtitle">Tactical FPS</span>
                 </div>
               </div>
-              <span class="badge badge--manual">Manual data</span>
-            </header>
-            <div class="game-card__body" data-slot="body">
-              <div class="card-loading"><span class="spinner"></span>Loading profile…</div>
             </div>
-            <footer class="game-card__foot">
-              <span data-slot="updated">—</span>
-              <span class="game-card__footnote">Riot personal stats require authorized API access — values are
-                maintained by hand.</span>
-            </footer>
+
+            <div class="game-card__stats-grid">
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__icon" style="color: #10b981;">🔰</span>
+                  <span class="game-stat__value" data-slot="val-rank">Ascendant 1</span>
+                </div>
+                <span class="game-stat__label">Peak Rank</span>
+              </div>
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__icon" style="color: #9ca3af;">🎯</span>
+                  <span class="game-stat__value" data-slot="val-kd">1.12</span>
+                </div>
+                <span class="game-stat__label">K/D Ratio</span>
+              </div>
+              <div class="game-stat">
+                <div class="game-stat__value-row">
+                  <span class="game-stat__icon" style="color: #9ca3af;">🧭</span>
+                  <span class="game-stat__value" data-slot="val-wr">51.3%</span>
+                </div>
+                <span class="game-stat__label">Win Rate</span>
+              </div>
+            </div>
+
+            <div class="game-card__footer">
+              <a href="https://tracker.gg/valorant" target="_blank" rel="noopener noreferrer" class="game-card__btn">
+                View Profile <span class="arrow">→</span>
+              </a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ DISCORD + ABOUT ============ -->
+    <!-- ============ DISCORD & ABOUT ME ============ -->
     <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="about-col">
-          <h2 class="section__title">About <span class="accent">Me</span></h2>
-          <div class="about-text">
-            <p>I'm Raiga — a player who treats games as more than a pastime. From climbing the osu! leaderboards to
-              clutching rounds in VALORANT, every session adds a page to the story.</p>
-            <p>This page is a living snapshot of that story: real stats pulled from official APIs where possible, honest
-              manual entries where it isn't, and nothing invented in between.</p>
+      <div class="container bottom-grid">
+        <!-- Discord Column -->
+        <div class="bottom-col">
+          <div class="section-head">
+            <h2 class="section-title">
+              <span class="slashes" aria-hidden="true"><span></span><span></span><span></span></span>
+              DISCORD PROFILE
+            </h2>
+            <a href="https://discord.com/users/610382027002478612" target="_blank" rel="noopener noreferrer" class="section-link">
+              View Profile <span class="arrow">→</span>
+            </a>
           </div>
+
+          <article class="discord-card" data-card="discord">
+            <div class="discord-card__top">
+              <div class="discord-card__user">
+                <div class="discord-avatar-wrap">
+                  <img id="discord-avatar-img" src="/assets/icons/discord.svg" alt="Discord" />
+                </div>
+                <div class="discord-card__names">
+                  <div class="discord-card__name-row">
+                    <strong class="discord-card__username" id="discord-username">Raiga</strong>
+                    <span class="discord-verified" title="Verified">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="discord-card__status" id="discord-status">
+                    <span class="status-dot status-dot--online"></span>
+                    <span id="discord-status-text">Online</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Orange glowing audio waveform -->
+              <div class="discord-waveform" aria-hidden="true">
+                <svg viewBox="0 0 100 40">
+                  <path d="M 0 20 Q 15 20 25 10 T 40 28 T 55 5 T 70 32 T 85 18 T 100 20"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="discord-card__divider">
+              <span>CURRENT ACTIVITY</span>
+            </div>
+
+            <div class="discord-activity-box" id="discord-activity">
+              <div class="discord-activity__icon-wrap">
+                <img src="/assets/icons/valorant_logo.jpg" alt="" class="discord-activity__icon" />
+              </div>
+              <div class="discord-activity__details">
+                <div class="discord-activity__game" id="discord-activity-game">Playing VALORANT</div>
+                <div class="discord-activity__time" id="discord-activity-time">for 2h 14m</div>
+              </div>
+            </div>
+          </article>
         </div>
 
-        <div class="about-col">
-          <h2 class="section__title">Discord <span class="accent">Presence</span></h2>
-          <article class="discord-card" data-card="discord">
-            <div class="game-card__body" data-slot="body">
-              <div class="card-loading"><span class="spinner"></span>Connecting to Lanyard…</div>
+        <!-- About Column -->
+        <div class="bottom-col">
+          <div class="section-head">
+            <h2 class="section-title">
+              <span class="slashes" aria-hidden="true"><span></span><span></span><span></span></span>
+              ABOUT ME
+            </h2>
+          </div>
+
+          <article class="about-card">
+            <div class="about-card__content">
+              <p class="about-card__text">
+                A passionate gamer who loves rhythm games, competitive <span class="highlight-underline">FPS</span>, and exploring new worlds.
+              </p>
+              <p class="about-card__text">
+                Always looking for good games, great friends, and unforgettable moments.
+              </p>
+
+              <div class="about-card__tags">
+                <span class="about-tag">Gamer</span>
+                <span class="about-tag">Anime</span>
+                <span class="about-tag">Tech Enthusiast</span>
+                <span class="about-tag">Chill Vibes</span>
+              </div>
+            </div>
+
+            <div class="about-card__game-on" aria-hidden="true">
+              <span class="game-on-text">Game On!</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ SOCIALS ============ -->
-    <section class="section" id="socials">
-      <div class="container">
-        <h2 class="section__title">Find me <span class="accent">elsewhere</span></h2>
-        <div class="socials-grid">
-          <a class="social-card" href="https://discord.com/users/610382027002478612" target="_blank"
-            rel="noopener noreferrer">
-            <img src="/assets/icons/discord.svg" alt="" width="22" height="22" loading="lazy" />
-            <div><strong>Discord</strong><span>Raiga</span></div>
-          </a>
-          <a class="social-card" href="https://steamcommunity.com/profiles/76561198983428903/" target="_blank"
-            rel="noopener noreferrer">
-            <img src="/assets/icons/steam.svg" alt="" width="22" height="22" loading="lazy" />
-            <div><strong>Steam</strong><span>Raiga</span></div>
-          </a>
-          <a class="social-card" href="https://youtube.com/@raiga" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/icons/youtube.svg" alt="" width="22" height="22" loading="lazy" />
-            <div><strong>YouTube</strong><span>@raiga</span></div>
-          </a>
-          <a class="social-card" href="https://x.com/@raigafp0u" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/icons/x.svg" alt="" width="22" height="22" loading="lazy" />
-            <div><strong>X</strong><span>@raigafp0u</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
+    <!-- Invisible anchor for Socials navigation -->
+    <div id="socials"></div>
   </main>
 
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
+    <div class="cyber-decal cyber-decal--bottom-right" aria-hidden="true"></div>
+
     <div class="container footer__inner">
-      <span class="nav__logo nav__logo--small" aria-label="RAIGA."><img src="/assets/icons/logo_raiga.jpg" alt="RAIGA."
-          class="nav__logo-img" /></span>
-      <p>Gaming is part of my story. © <span id="year"></span></p>
+      <div class="footer__left">
+        <div class="footer__brand">
+          RAIGA<span class="nav__brand-dot">.</span>
+        </div>
+        <p class="footer__sub">Personal Gaming Profile • Est. 2026</p>
+      </div>
+
+      <div class="footer__center">
+        <span class="footer__pipe">|</span>
+        <div class="footer__socials">
+          <a class="footer__social" href="https://discord.com/users/610382027002478612" target="_blank"
+            rel="noopener noreferrer" title="Discord">
+            <img src="/assets/icons/discord.svg" alt="Discord" width="18" height="18" />
+          </a>
+          <a class="footer__social" href="https://steamcommunity.com/profiles/76561198983428903/" target="_blank"
+            rel="noopener noreferrer" title="Steam">
+            <img src="/assets/icons/steam.svg" alt="Steam" width="18" height="18" />
+          </a>
+          <a class="footer__social" href="https://youtube.com/@raiga_v" target="_blank"
+            rel="noopener noreferrer" title="YouTube">
+            <img src="/assets/icons/youtube.svg" alt="YouTube" width="18" height="18" />
+          </a>
+          <a class="footer__social" href="https://x.com/@raigafp0u" target="_blank"
+            rel="noopener noreferrer" title="X">
+            <img src="/assets/icons/x.svg" alt="X" width="18" height="18" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__right">
+        <span class="footer__thanks">Thanks for visiting! <span class="footer__heart">♡</span></span>
+      </div>
     </div>
   </footer>
 

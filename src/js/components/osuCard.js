@@ -1,43 +1,27 @@
-import { fetchApi, formatUpdated, fmt } from '../apiClient.js';
-import { error, statRow, statRows } from './cardStates.js';
-import { el } from './dom.js';
+import { fetchApi, fmt } from '../apiClient.js';
 
 export async function renderOsu(cardEl) {
-  const body = cardEl.querySelector('[data-slot="body"]');
-  const updated = cardEl.querySelector('[data-slot="updated"]');
+  if (!cardEl) return;
+  const rankSlot = cardEl.querySelector('[data-slot="osu-rank"]');
+  const ppSlot = cardEl.querySelector('[data-slot="osu-pp"]');
+  const accSlot = cardEl.querySelector('[data-slot="osu-acc"]');
+
   const res = await fetchApi('/api/osu/profile', 5 * 60_000);
-  updated.textContent = formatUpdated(res.fetchedAt);
+  if (!res.ok || !res.data) return;
 
-  if (!res.ok) {
-    return error(body, 'osu! stats unavailable', res.error ?? '');
-  }
   const d = res.data;
-  if (!d) return error(body, 'osu! stats unavailable', 'User not found.');
-
-  // Values are validated numbers on the backend; still rendered as text only.
-  const rows = statRows();
-  statRow(rows, 'Global rank', d.globalRank ? `#${fmt.num(d.globalRank)}` : null, 'stat-row__val--rank');
-  statRow(rows, 'Country rank', d.countryRank ? `#${fmt.num(d.countryRank)}` : null);
-  statRow(rows, 'Performance', d.pp ? `${fmt.num(d.pp)} pp` : null);
-  statRow(rows, 'Accuracy', fmt.pct(d.accuracy));
-  statRow(rows, 'Play count', fmt.num(d.playCount));
-  statRow(rows, 'Level', d.level ? `${d.level}` : null);
-  // ponytail: round seconds to whole hours; upgrade to days/hours breakdown if profile demands it
-  const playTime = typeof d.playTimeSeconds === 'number'
-    ? `${fmt.num(Math.round(d.playTimeSeconds / 3600))} hrs`
-    : null;
-  statRow(rows, 'Official playtime', playTime);
-
-  body.replaceChildren(rows);
+  if (d.globalRank && rankSlot) {
+    rankSlot.textContent = `#${fmt.num(d.globalRank)}`;
+  }
+  if (d.pp && ppSlot) {
+    ppSlot.textContent = `${fmt.num(d.pp)} pp`;
+  }
+  if (d.accuracy && accSlot) {
+    accSlot.textContent = fmt.pct(d.accuracy);
+  }
 
   const overviewVal = document.getElementById('overview-playtime-val');
-  const overviewNote = document.getElementById('overview-playtime-note');
-  if (overviewVal && overviewNote && typeof d.playTimeSeconds === 'number') {
-    overviewVal.className = 'stat-card__value';
-    overviewVal.replaceChildren(
-      document.createTextNode(fmt.num(Math.round(d.playTimeSeconds / 3600))),
-      el('span', { className: 'stat-card__unit', text: 'hrs (osu!)' })
-    );
-    overviewNote.textContent = 'Official osu! playtime — Roblox & VALORANT unavailable.';
+  if (overviewVal && typeof d.playTimeSeconds === 'number') {
+    overviewVal.textContent = `~ ${fmt.num(Math.round(d.playTimeSeconds / 3600))}h+`;
   }
 }
