@@ -1,0 +1,10 @@
+# Exclude sensitive environment and local credential files from distributable archives
+.env export-ignore
+.env.* export-ignore
+.env.local export-ignore
+*.pem export-ignore
+*.key export-ignore
+.env.example -export-ignore
+*.zip export-ignore
+.vercel export-ignore
+node_modules export-ignore

@@ -1,0 +1,24 @@
+{
+  "siteName": "RAIGA.",
+  "tagline": "Gaming is part of my story.",
+  "accounts": {
+    "osu": { "username": "Raiga7740", "profileUrl": "https://osu.ppy.sh/users/Raiga7740" },
+    "roblox": { "username": "Raiga7740", "profileUrl": "https://www.roblox.com/users/Raiga7740/profile" },
+    "valorant": { "riotId": "haerin#10927" }
+  },
+  "socials": [
+    { "label": "Discord", "handle": "Raiga", "note": "Discord username is served from live presence data once Lanyard is connected — not the Riot ID.", "url": "https://discord.com/users/610382027002478612" },
+    { "label": "Steam", "handle": "Raiga", "url": "https://steamcommunity.com/id/raiga7740" },
+    { "label": "YouTube", "handle": "@raiga", "url": "https://youtube.com/@raiga" },
+    { "label": "X", "handle": "@raiga7740", "url": "https://x.com/raiga7740" }
+  ],
+  "about": [
+    "I'm Raiga — a player who treats games as more than a pastime. From climbing the osu! leaderboards to clutching rounds in VALORANT, every session adds a page to the story.",
+    "This page is a living snapshot of that story: real stats pulled from official APIs where possible, honest manual entries where it isn't, and nothing invented in between."
+  ],
+  "overview": {
+    "note": "Playtime data is not reliably available, so it is shown as unavailable rather than estimated.",
+    "favoriteGame": "VALORANT",
+    "highlight": "Peak Immortal 1 in VALORANT — the grind continues."
+  }
+}

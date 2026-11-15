@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAIGA. — Gaming Profile</title>
+  <meta name="description" content="Raiga's personal gaming profile — osu!, Roblox, VALORANT and Discord presence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/css/main.css" />
+</head>
+<body>
+  <!-- Atmospheric hero backdrop -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="backdrop__glow"></div>
+    <div class="backdrop__grid"></div>
+  </div>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">RAIGA<span class="nav__logo-dot">.</span></a>
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#home" class="nav__link is-active">Home</a>
+        <a href="#games" class="nav__link">Games</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#socials" class="nav__link">Socials</a>
+      </nav>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Gaming Profile</p>
+          <h1 class="hero__title">Hey, I'm <span class="hero__accent">Raiga</span>.</h1>
+          <p class="hero__subtitle">Gaming is part of my story.</p>
+
+          <div class="hero__accounts">
+            <span class="hero__account"><img src="/assets/icons/osu.svg" alt="" loading="lazy" width="16" height="16"/>osu! — Raiga7740</span>
+            <span class="hero__account"><img src="/assets/icons/roblox.svg" alt="" loading="lazy" width="16" height="16"/>Roblox — Raiga7740</span>
+            <span class="hero__account"><img src="/assets/icons/valorant.svg" alt="" loading="lazy" width="16" height="16"/>VALORANT — haerin#10927</span>
+          </div>
+
+          <div class="hero__socials">
+            <a class="social-chip" href="https://discord.com/users/610382027002478612" target="_blank" rel="noopener noreferrer" title="Discord">
+              <img src="/assets/icons/discord.svg" alt="Discord" width="18" height="18" loading="lazy" />
+            </a>
+            <a class="social-chip" href="https://steamcommunity.com/id/raiga7740" target="_blank" rel="noopener noreferrer" title="Steam">
+              <img src="/assets/icons/steam.svg" alt="Steam" width="18" height="18" loading="lazy" />
+            </a>
+            <a class="social-chip" href="https://youtube.com/@raiga" target="_blank" rel="noopener noreferrer" title="YouTube">
+              <img src="/assets/icons/youtube.svg" alt="YouTube" width="18" height="18" loading="lazy" />
+            </a>
+            <a class="social-chip" href="https://x.com/raiga7740" target="_blank" rel="noopener noreferrer" title="X">
+              <img src="/assets/icons/x.svg" alt="X" width="18" height="18" loading="lazy" />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__avatar-frame">
+            <img id="hero-avatar" src="" alt="Raiga's osu! avatar" loading="lazy"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('is-empty')" />
+            <span class="hero__avatar-fallback">R</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">scroll</div>
+    </section>
+
+    <!-- ============ OVERVIEW ============ -->
+    <section class="section" id="overview">
+      <div class="container">
+        <h2 class="section__title">Gaming <span class="accent">Overview</span></h2>
+        <div class="overview-grid" id="overview-grid">
+          <article class="stat-card">
+            <span class="stat-card__label">Total playtime</span>
+            <span class="stat-card__value stat-card__value--unavailable">Unavailable</span>
+            <span class="stat-card__note">No reliable source — not estimated.</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">Games played</span>
+            <span class="stat-card__value">3<span class="stat-card__unit">tracked</span></span>
+            <span class="stat-card__note">osu! · Roblox · VALORANT</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">Favorite game</span>
+            <span class="stat-card__value">VALORANT</span>
+            <span class="stat-card__note">Most hours invested recently.</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">Personal highlight</span>
+            <span class="stat-card__value stat-card__value--small">Peak Immortal 1</span>
+            <span class="stat-card__note">The grind continues.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GAMES ============ -->
+    <section class="section" id="games">
+      <div class="container">
+        <h2 class="section__title">My <span class="accent">Games</span></h2>
+        <div class="games-grid">
+
+          <!-- osu! -->
+          <article class="game-card game-card--osu" data-card="osu">
+            <header class="game-card__head">
+              <div class="game-card__id">
+                <img src="/assets/icons/osu.svg" alt="" width="28" height="28" loading="lazy" />
+                <div>
+                  <h3 class="game-card__name">osu!</h3>
+                  <p class="game-card__handle">Raiga7740</p>
+                </div>
+              </div>
+              <span class="badge badge--api" data-state="live">Live · osu! API</span>
+            </header>
+            <div class="game-card__body" data-slot="body">
+              <div class="card-loading"><span class="spinner"></span>Loading osu! stats…</div>
+            </div>
+            <footer class="game-card__foot">
+              <span data-slot="updated">—</span>
+              <a href="https://osu.ppy.sh/users/Raiga7740" target="_blank" rel="noopener noreferrer">View profile ↗</a>
+            </footer>
+          </article>
+
+          <!-- Roblox -->
+          <article class="game-card game-card--roblox" data-card="roblox">
+            <header class="game-card__head">
+              <div class="game-card__id">
+                <img src="/assets/icons/roblox.svg" alt="" width="28" height="28" loading="lazy" />
+                <div>
+                  <h3 class="game-card__name">Roblox</h3>
+                  <p class="game-card__handle">Raiga7740</p>
+                </div>
+              </div>
+              <span class="badge badge--api">Live · Roblox API</span>
+            </header>
+            <div class="game-card__body" data-slot="body">
+              <div class="card-loading"><span class="spinner"></span>Loading Roblox profile…</div>
+            </div>
+            <footer class="game-card__foot">
+              <span data-slot="updated">—</span>
+              <a href="https://www.roblox.com/users/Raiga7740/profile" target="_blank" rel="noopener noreferrer">View profile ↗</a>
+            </footer>
+          </article>
+
+          <!-- VALORANT -->
+          <article class="game-card game-card--valorant" data-card="valorant">
+            <header class="game-card__head">
+              <div class="game-card__id">
+                <img src="/assets/icons/valorant.svg" alt="" width="28" height="28" loading="lazy" />
+                <div>
+                  <h3 class="game-card__name">VALORANT</h3>
+                  <p class="game-card__handle">haerin#10927</p>
+                </div>
+              </div>
+              <span class="badge badge--manual">Manual data</span>
+            </header>
+            <div class="game-card__body" data-slot="body">
+              <div class="card-loading"><span class="spinner"></span>Loading profile…</div>
+            </div>
+            <footer class="game-card__foot">
+              <span data-slot="updated">—</span>
+              <span class="game-card__footnote">Riot personal stats require authorized API access — values are maintained by hand.</span>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DISCORD + ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-col">
+          <h2 class="section__title">About <span class="accent">Me</span></h2>
+          <div class="about-text">
+            <p>I'm Raiga — a player who treats games as more than a pastime. From climbing the osu! leaderboards to clutching rounds in VALORANT, every session adds a page to the story.</p>
+            <p>This page is a living snapshot of that story: real stats pulled from official APIs where possible, honest manual entries where it isn't, and nothing invented in between.</p>
+          </div>
+        </div>
+
+        <div class="about-col">
+          <h2 class="section__title">Discord <span class="accent">Presence</span></h2>
+          <article class="discord-card" data-card="discord">
+            <div class="game-card__body" data-slot="body">
+              <div class="card-loading"><span class="spinner"></span>Connecting to Lanyard…</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOCIALS ============ -->
+    <section class="section" id="socials">
+      <div class="container">
+        <h2 class="section__title">Find me <span class="accent">elsewhere</span></h2>
+        <div class="socials-grid">
+          <a class="social-card" href="https://discord.com/users/610382027002478612" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/icons/discord.svg" alt="" width="22" height="22" loading="lazy" />
+            <div><strong>Discord</strong><span>Raiga</span></div>
+          </a>
+          <a class="social-card" href="https://steamcommunity.com/id/raiga7740" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/icons/steam.svg" alt="" width="22" height="22" loading="lazy" />
+            <div><strong>Steam</strong><span>Raiga</span></div>
+          </a>
+          <a class="social-card" href="https://youtube.com/@raiga" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/icons/youtube.svg" alt="" width="22" height="22" loading="lazy" />
+            <div><strong>YouTube</strong><span>@raiga</span></div>
+          </a>
+          <a class="social-card" href="https://x.com/raiga7740" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/icons/x.svg" alt="" width="22" height="22" loading="lazy" />
+            <div><strong>X</strong><span>@raiga7740</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="nav__logo nav__logo--small">RAIGA<span class="nav__logo-dot">.</span></span>
+      <p>Gaming is part of my story. © <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

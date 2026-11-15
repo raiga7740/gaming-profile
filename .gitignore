@@ -1,0 +1,21 @@
+# Environment / secrets — never commit or archive these
+.env
+.env.*
+.env.local
+*.pem
+*.key
+!.env.example
+*.zip
+
+# Dependencies
+node_modules/
+
+# Vercel
+.vercel
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
