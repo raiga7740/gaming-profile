@@ -1,6 +1,6 @@
 import { fetchApi, formatUpdated, fmt } from '../apiClient.js';
 import { error, statRow, statRows } from './cardStates.js';
-import { el, setImgSrc } from './dom.js';
+import { el } from './dom.js';
 
 export async function renderOsu(cardEl) {
   const body = cardEl.querySelector('[data-slot="body"]');
@@ -13,13 +13,6 @@ export async function renderOsu(cardEl) {
   }
   const d = res.data;
   if (!d) return error(body, 'osu! stats unavailable', 'User not found.');
-
-  const heroAvatar = document.getElementById('hero-avatar');
-  if (heroAvatar && d.avatarUrl) {
-    setImgSrc(heroAvatar, d.avatarUrl);
-    heroAvatar.style.display = '';
-    heroAvatar.parentElement?.classList.remove('is-empty');
-  }
 
   // Values are validated numbers on the backend; still rendered as text only.
   const rows = statRows();
