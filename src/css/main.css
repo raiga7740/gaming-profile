@@ -307,8 +307,6 @@ button {
   opacity: 0.45;
   transition: all var(--transition);
 }
-  transition: all var(--transition);
-}
 
 .theme-toggle__icon.is-active {
   opacity: 1;
