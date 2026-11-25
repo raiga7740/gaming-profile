@@ -17,6 +17,7 @@ const IGNORE_PATTERNS = [
     /^\.git/,
     /^\.vercel/,
     /^node_modules/,
+    /^dist/,
     /\.zip$/,
     /\.(pem|key|log)$/,
     /^\.DS_Store$/,

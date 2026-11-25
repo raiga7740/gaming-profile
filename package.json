@@ -8,10 +8,24 @@
     "node": ">=18"
   },
   "scripts": {
-    "dev": "npx --yes vercel dev",
-    "start": "npx --yes vercel dev",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "vercel-dev": "npx --yes vercel dev",
+    "start": "vite",
     "deploy": "npx --yes vercel --prod",
     "test": "node scripts/xss-check.mjs && node scripts/failure-test.mjs && node scripts/smoke-test.mjs && node scripts/valorant-api-test.mjs && node scripts/playtime-test.mjs",
     "package": "node scripts/package-zip.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "^14.14.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.3.8"
   }
 }
