@@ -1,5 +1,5 @@
 import { fetchApi } from '../apiClient.js';
-import { setImgSrc } from './dom.js';
+import { setImgSrc, safeClass } from './dom.js';
 
 const STATUS_LABEL = {
   online: 'Online',
@@ -32,12 +32,14 @@ export async function renderDiscord(cardEl) {
     setImgSrc(avatarImg, d.avatarUrl, '/assets/icons/discord.svg');
   }
 
+  const status = d.status || 'online';
+  const statusLabel = STATUS_LABEL[status] || 'Online';
+
   if (statusEl && statusText) {
-    const status = d.status || 'online';
-    statusText.textContent = STATUS_LABEL[status] || 'Online';
+    statusText.textContent = statusLabel;
     const dot = statusEl.querySelector('.status-dot');
     if (dot) {
-      dot.className = `status-dot status-dot--${status}`;
+      dot.className = `status-dot ${safeClass(status, 'status-dot--', ['online', 'idle', 'dnd', 'offline'], 'offline')}`;
     }
   }
 
@@ -45,6 +47,14 @@ export async function renderDiscord(cardEl) {
     if (activityGame) activityGame.textContent = `Playing ${d.activity.name}`;
     if (activityTime) {
       activityTime.textContent = d.activity.details || d.activity.state || 'Active now';
+    }
+    if (activityBox) activityBox.style.display = 'flex';
+  } else {
+    if (activityGame) {
+      activityGame.textContent = d.customStatus || 'No current activity';
+    }
+    if (activityTime) {
+      activityTime.textContent = d.customStatus ? statusLabel : 'Currently chilling';
     }
     if (activityBox) activityBox.style.display = 'flex';
   }
